@@ -31,8 +31,7 @@ export default defineConfig({
           { text: '校园生活', link: '/campus-life' },
           { text: '2026 新生资料包', link: '/freshman-pack' },
           { text: '实用工具', link: '/tools' },
-          { text: '资料来源', link: '/sources' },
-          { text: '部署说明', link: '/deploy' }
+          { text: '资料来源', link: '/sources' }
         ]
       }
     ],
