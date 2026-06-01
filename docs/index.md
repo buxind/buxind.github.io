@@ -57,7 +57,6 @@ async function copyWechat() {
     <div v-for="chat in groupChats" :key="chat" class="group-chat-card">
       <div>
         <h3>{{ chat }}</h3>
-        <p>复制微信号后添加，审核时说明想加入的群聊类型。</p>
       </div>
       <button type="button" @click="copyWechat">复制</button>
     </div>
