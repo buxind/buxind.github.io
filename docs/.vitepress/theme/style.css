@@ -1,0 +1,258 @@
+:root {
+  --vp-c-brand-1: #1f7a5c;
+  --vp-c-brand-2: #2f9472;
+  --vp-c-brand-3: #d7efe5;
+  --vp-c-brand-soft: rgba(31, 122, 92, 0.14);
+  --vp-home-hero-name-color: #1f7a5c;
+  --vp-font-family-base: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.dark {
+  --vp-c-brand-1: #62d2a2;
+  --vp-c-brand-2: #42b883;
+  --vp-c-brand-3: #225c49;
+}
+
+.VPHome {
+  padding-bottom: 24px;
+}
+
+.guide-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: 28px;
+  align-items: stretch;
+  margin: 0 auto 30px;
+  max-width: 1120px;
+  padding: 40px 24px 10px;
+}
+
+.guide-hero h1 {
+  margin: 0 0 14px;
+  color: var(--vp-c-text-1);
+  font-size: 46px;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.guide-hero p {
+  max-width: 680px;
+  color: var(--vp-c-text-2);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero-actions a,
+.quick-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  border-radius: 8px;
+  padding: 0 15px;
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  font-weight: 650;
+  text-decoration: none;
+  background: var(--vp-c-bg);
+}
+
+.hero-actions a:first-child {
+  border-color: var(--vp-c-brand-1);
+  color: #fff;
+  background: var(--vp-c-brand-1);
+}
+
+.hero-media {
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.hero-media figcaption {
+  padding: 10px 12px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.guide-section {
+  max-width: 1120px;
+  margin: 0 auto 28px;
+  padding: 0 24px;
+}
+
+.guide-section h2 {
+  margin-top: 0;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 24px;
+  font-size: 25px;
+  letter-spacing: 0;
+}
+
+.campus-grid,
+.link-grid,
+.fact-grid,
+.faq-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.campus-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.link-grid,
+.fact-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.faq-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.info-card,
+.fact-card,
+.faq-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--vp-c-bg);
+}
+
+.info-card h3,
+.fact-card h3,
+.faq-card h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  letter-spacing: 0;
+}
+
+.info-card p,
+.fact-card p,
+.faq-card p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.7;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  background: var(--vp-c-bg-soft);
+}
+
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 2px 7px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  background: #1f7a5c;
+}
+
+.source-badge.pending {
+  background: #9a5b16;
+}
+
+.source-badge.experience {
+  background: #3b6ea8;
+}
+
+.check-list {
+  display: grid;
+  gap: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.check-list li {
+  border-left: 4px solid var(--vp-c-brand-1);
+  padding: 8px 12px;
+  background: var(--vp-c-bg-soft);
+}
+
+.dorm-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 16px 0 22px;
+}
+
+.dorm-gallery figure {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+}
+
+.dorm-gallery a {
+  display: block;
+  text-decoration: none;
+}
+
+.dorm-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.dorm-gallery figcaption {
+  padding: 10px 12px;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .guide-hero,
+  .campus-grid,
+  .link-grid,
+  .fact-grid,
+  .faq-grid,
+  .dorm-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-hero {
+    padding-top: 24px;
+  }
+
+  .guide-hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-media img {
+    height: 210px;
+  }
+}
