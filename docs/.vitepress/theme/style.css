@@ -161,26 +161,83 @@
 
 .group-chat-card {
   display: flex;
-  min-height: 150px;
+  min-height: 142px;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
   border: 1px solid var(--vp-c-divider);
+  border-top: 4px solid var(--vp-c-brand-1);
   border-radius: 8px;
   padding: 16px;
+  background: linear-gradient(180deg, var(--vp-c-brand-soft), var(--vp-c-bg) 58%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.group-chat-card:nth-child(2) {
+  border-top-color: #3b6ea8;
+}
+
+.group-chat-card:nth-child(3) {
+  border-top-color: #b46a17;
+}
+
+.group-chat-card:nth-child(4) {
+  border-top-color: #9b4d74;
+}
+
+.group-chat-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+  transform: translateY(-2px);
+}
+
+.group-chat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.group-chat-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 800;
+  background: var(--vp-c-brand-1);
+}
+
+.group-chat-card:nth-child(2) .group-chat-mark {
+  background: #3b6ea8;
+}
+
+.group-chat-card:nth-child(3) .group-chat-mark {
+  background: #b46a17;
+}
+
+.group-chat-card:nth-child(4) .group-chat-mark {
+  background: #9b4d74;
+}
+
+.group-chat-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  font-weight: 650;
   background: var(--vp-c-bg);
 }
 
 .group-chat-card h3 {
-  margin: 0 0 8px;
-  font-size: 17px;
-  letter-spacing: 0;
-}
-
-.group-chat-card p {
   margin: 0;
-  color: var(--vp-c-text-2);
-  line-height: 1.7;
+  font-size: 18px;
+  letter-spacing: 0;
 }
 
 .group-chat-card button,
@@ -196,6 +253,10 @@
   font-weight: 700;
   background: var(--vp-c-brand-1);
   cursor: pointer;
+}
+
+.group-chat-card button {
+  width: 100%;
 }
 
 .group-chat-card button:hover,

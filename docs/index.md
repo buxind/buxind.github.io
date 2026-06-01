@@ -7,10 +7,10 @@ title: 安科 26 新生攻略
 import { ref } from 'vue'
 
 const groupChats = [
-  '26 新生群',
-  '校内论坛',
-  '校内二手群',
-  '校内跑腿代拿'
+  { title: '26 新生群', label: '报到咨询', mark: '新' },
+  { title: '校内论坛', label: '校园问答', mark: '问' },
+  { title: '校内二手群', label: '闲置流转', mark: '二' },
+  { title: '校内跑腿代拿', label: '互助代办', mark: '跑' }
 ]
 const wechatId = 'USTA2023'
 const isGroupModalOpen = ref(false)
@@ -54,11 +54,13 @@ async function copyWechat() {
 <section class="guide-section group-chat-section">
   <h2>校内必备群聊</h2>
   <div class="group-chat-grid">
-    <div v-for="chat in groupChats" :key="chat" class="group-chat-card">
-      <div>
-        <h3>{{ chat }}</h3>
+    <div v-for="chat in groupChats" :key="chat.title" class="group-chat-card">
+      <div class="group-chat-head">
+        <span class="group-chat-mark" aria-hidden="true">{{ chat.mark }}</span>
+        <span class="group-chat-pill">{{ chat.label }}</span>
       </div>
-      <button type="button" @click="copyWechat">复制</button>
+      <h3>{{ chat.title }}</h3>
+      <button type="button" :aria-label="`复制${chat.title}微信号`" @click="copyWechat">复制微信</button>
     </div>
   </div>
 </section>
