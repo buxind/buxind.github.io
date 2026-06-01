@@ -3,6 +3,37 @@ layout: home
 title: 安科 26 新生攻略
 ---
 
+<script setup>
+import { ref } from 'vue'
+
+const groupChats = [
+  '26 新生群',
+  '校内论坛',
+  '校内二手群',
+  '校内跑腿代拿'
+]
+const wechatId = 'USTA2023'
+const isGroupModalOpen = ref(false)
+
+async function copyWechat() {
+  try {
+    await navigator.clipboard.writeText(wechatId)
+  } catch {
+    const textarea = document.createElement('textarea')
+    textarea.value = wechatId
+    textarea.setAttribute('readonly', '')
+    textarea.style.position = 'fixed'
+    textarea.style.opacity = '0'
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+  }
+
+  isGroupModalOpen.value = true
+}
+</script>
+
 <section class="guide-hero">
   <div>
     <h1>安科 26 新生攻略</h1>
@@ -19,6 +50,28 @@ title: 安科 26 新生攻略
     <figcaption>安徽科技工程大学高质量发展大会现场图，展示学校更名后的新形象。</figcaption>
   </figure>
 </section>
+
+<section class="guide-section group-chat-section">
+  <h2>校内必备群聊</h2>
+  <div class="group-chat-grid">
+    <div v-for="chat in groupChats" :key="chat" class="group-chat-card">
+      <div>
+        <h3>{{ chat }}</h3>
+        <p>复制微信号后添加，审核时说明想加入的群聊类型。</p>
+      </div>
+      <button type="button" @click="copyWechat">复制</button>
+    </div>
+  </div>
+</section>
+
+<div v-if="isGroupModalOpen" class="copy-modal-mask" role="dialog" aria-modal="true" aria-labelledby="copy-modal-title">
+  <div class="copy-modal">
+    <h2 id="copy-modal-title">复制成功</h2>
+    <p>你已经复制微信号，请添加微信，审核后，说明你想要加入的群聊类型</p>
+    <div class="wechat-code">{{ wechatId }}</div>
+    <button type="button" @click="isGroupModalOpen = false">知道了</button>
+  </div>
+</div>
 
 <section class="guide-section">
   <h2>先看这 9 件事</h2>
