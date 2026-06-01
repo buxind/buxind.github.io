@@ -51,7 +51,7 @@ export default defineConfig({
       text: '页面更新'
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/buxind/buxind.github.io' }
     ],
     footer: {
       message: '非官方学生攻略站。重要安排请以学校官方通知为准。',
