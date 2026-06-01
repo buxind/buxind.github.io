@@ -1,3 +1,28 @@
+<script setup>
+import { ref } from 'vue'
+
+const wechatId = 'USTA2023'
+const isNoticeModalOpen = ref(false)
+
+async function copyNoticeWechat() {
+  try {
+    await navigator.clipboard.writeText(wechatId)
+  } catch {
+    const textarea = document.createElement('textarea')
+    textarea.value = wechatId
+    textarea.setAttribute('readonly', '')
+    textarea.style.position = 'fixed'
+    textarea.style.opacity = '0'
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+  }
+
+  isNoticeModalOpen.value = true
+}
+</script>
+
 # 新生报到
 
 这一页按“录取后到进校当天”的顺序整理。具体日期、批次、系统开放时间、材料要求每年会变化，请以录取通知书、迎新网和招生就业处公告为准。
@@ -13,6 +38,20 @@
   <li>确认自己所在校区，不同校区到站、公交、自驾路线不同。</li>
   <li>提前规划到站时间，报到日接站安排以当年迎新通知为准。</li>
 </ul>
+
+<div class="arrival-notice-card">
+  <p>想要获得学校最新消息，最及时通知，请点击此按钮</p>
+  <button type="button" @click="copyNoticeWechat">复制微信</button>
+</div>
+
+<div v-if="isNoticeModalOpen" class="copy-modal-mask" role="dialog" aria-modal="true" aria-labelledby="notice-modal-title">
+  <div class="copy-modal">
+    <h2 id="notice-modal-title">复制成功</h2>
+    <p>你已经复制微信，获得学校最新消息，最新通知资讯，请去微信进行添加媒体。</p>
+    <div class="wechat-code">{{ wechatId }}</div>
+    <button type="button" @click="isNoticeModalOpen = false">知道了</button>
+  </div>
+</div>
 
 ## 迎新网能查什么
 
