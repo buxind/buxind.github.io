@@ -1,3 +1,28 @@
+<script setup>
+import { ref } from 'vue'
+
+const wechatId = 'USTA2023'
+const isQuestionModalOpen = ref(false)
+
+async function copyQuestionWechat() {
+  try {
+    await navigator.clipboard.writeText(wechatId)
+  } catch {
+    const textarea = document.createElement('textarea')
+    textarea.value = wechatId
+    textarea.setAttribute('readonly', '')
+    textarea.style.position = 'fixed'
+    textarea.style.opacity = '0'
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
+  }
+
+  isQuestionModalOpen.value = true
+}
+</script>
+
 # 校园生活
 
 这一页整理新生最关心的吃、住、洗浴、开水、洗衣、校园卡和网络。宿舍楼栋、床位、收费、热水供应等会随校区和年份变化，务必以入学当年安排为准。
@@ -49,7 +74,29 @@
   </figure>
 </div>
 
-<span class="source-badge pending">待核验</span> 第三方宿舍经验会提到“几人间、是否上床下桌、是否独卫”等细节，但这些可能随校区、楼栋和年份变化。本站第一版不把非官方说法写成确定结论。
+### 新生常问
+
+<div class="life-qa-grid">
+  <div class="life-qa-card">
+    <h4>宿舍什么样子？</h4>
+    <p>宿舍由学校统一分配。凤阳校区和龙湖校区一般为四人间、上床下桌、无独立卫浴，有层浴；滁州校区有独立卫浴。床的大小一般为 2.0m x 0.9m，每个宿舍都有空调，每个人配有一把椅子。床位和宿舍由学院和学校安排，自己不能选择。</p>
+  </div>
+  <div class="life-qa-card">
+    <h4>去哪里洗澡？有隔间吗？</h4>
+    <p>龙湖校区一层有层浴，有隔间，也有挂帘。凤阳校区大部分楼层有浴室，有挂帘，也有公共大澡堂。滁州校区为每个宿舍单独配备独立卫浴。</p>
+  </div>
+</div>
+
+<button type="button" class="ask-more-button" @click="copyQuestionWechat">询问更多问题请点击这里</button>
+
+<div v-if="isQuestionModalOpen" class="copy-modal-mask" role="dialog" aria-modal="true" aria-labelledby="question-modal-title">
+  <div class="copy-modal">
+    <h2 id="question-modal-title">复制成功</h2>
+    <p>你已经复制微信号，请添加微信，你可以在论坛内提出你想咨询的任何问题，欢迎来到安科</p>
+    <div class="wechat-code">{{ wechatId }}</div>
+    <button type="button" @click="isQuestionModalOpen = false">知道了</button>
+  </div>
+</div>
 
 ## 校园一卡通
 
