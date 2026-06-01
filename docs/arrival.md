@@ -40,7 +40,11 @@ async function copyNoticeWechat() {
 </ul>
 
 <div class="arrival-notice-card">
-  <p>想要获得学校最新消息，最及时通知，请点击此按钮</p>
+  <div class="arrival-notice-icon" aria-hidden="true">讯</div>
+  <div class="arrival-notice-copy">
+    <strong>想要获得学校最新消息和及时通知？</strong>
+    <span>复制微信号后去微信添加，后续可获取报到提醒、校园资讯和新生通知。</span>
+  </div>
   <button type="button" @click="copyNoticeWechat">复制微信</button>
 </div>
 
