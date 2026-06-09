@@ -15,11 +15,10 @@ export default defineConfig({
     logo: '/images/ahstu-emblem.jpeg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '认识安科', link: '/about' },
-      { text: '新生报到', link: '/arrival' },
-      { text: '校园生活', link: '/campus-life' },
-      { text: '资料包', link: '/freshman-pack' },
-      { text: '实用工具', link: '/tools' }
+      { text: '新生知道', link: '/arrival' },
+      { text: '信息索引', link: '/tools' },
+      { text: '掌上安科', link: '/freshman-pack' },
+      { text: '校园墙[校群]', link: '/#campus-groups' }
     ],
     sidebar: [
       {

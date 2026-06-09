@@ -12,6 +12,50 @@ const groupChats = [
   { title: '校内二手群', label: '闲置流转', mark: '二' },
   { title: '校内跑腿代拿', label: '互助代办', mark: '跑' }
 ]
+const guideCategories = [
+  {
+    title: '新生入口',
+    desc: '报到清单、线上入口、到校流程和交通路线。',
+    href: '/arrival',
+    icon: '▣',
+    tone: 'red'
+  },
+  {
+    title: '常见问题',
+    desc: '宿舍、洗澡、食堂、网络、门禁等高频问题。',
+    href: '/campus-life#新生常问',
+    icon: '?',
+    tone: 'blue'
+  },
+  {
+    title: '物品准备',
+    desc: '开学要带什么、什么到校再买、快递怎么寄。',
+    href: '/arrival#报到前清单',
+    icon: '□',
+    tone: 'green'
+  },
+  {
+    title: '校友群组',
+    desc: '新生群、论坛、二手群和跑腿代拿入口。',
+    href: '#campus-groups',
+    icon: '●',
+    tone: 'purple'
+  },
+  {
+    title: '信息索引',
+    desc: '官网、招生、迎新、校历、地图和常用服务。',
+    href: '/tools',
+    icon: '⌁',
+    tone: 'amber'
+  },
+  {
+    title: '认识安科',
+    desc: '学校沿革、三校区、学院专业和办学特色。',
+    href: '/about',
+    icon: '1950',
+    tone: 'slate'
+  }
+]
 const wechatId = 'USTA2023'
 const isGroupModalOpen = ref(false)
 
@@ -37,12 +81,10 @@ async function copyWechat() {
 <section class="guide-hero">
   <div>
     <h1>安科 26 新生攻略</h1>
-    <p>给准备报考、已经录取和即将报到的同学：用一站式页面快速熟悉安徽科技工程大学的校区、报到、交通、食宿、校园卡和常用入口。重要时间和政策请以学校当年官方通知为准。</p>
+    <p>给准备报考、已经录取和即将报到的同学：先看入口，再查问题，最后按校区确认路线、宿舍、食堂和常用服务。重要时间和政策请以学校当年官方通知为准。</p>
     <div class="hero-actions">
-      <a href="/arrival">查看报到清单</a>
-      <a href="/campus-life">了解校园生活</a>
-      <a href="/freshman-pack">打开 26 资料包</a>
-      <a href="/tools">打开常用入口</a>
+      <a href="/arrival">新生入口</a>
+      <a href="/campus-life#新生常问">常见问题</a>
     </div>
   </div>
   <figure class="hero-media">
@@ -51,8 +93,25 @@ async function copyWechat() {
   </figure>
 </section>
 
-<section class="guide-section group-chat-section">
+<section class="guide-section entry-section">
+  <div class="section-heading">
+    <h2>先按这 6 类找</h2>
+    <p>不确定从哪里看时，直接点对应卡片。</p>
+  </div>
+  <div class="entry-grid">
+    <a v-for="category in guideCategories" :key="category.title" class="entry-card" :class="`entry-card-${category.tone}`" :href="category.href">
+      <span class="entry-icon" aria-hidden="true">{{ category.icon }}</span>
+      <span class="entry-copy">
+        <strong>{{ category.title }}</strong>
+        <span>{{ category.desc }}</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section id="campus-groups" class="guide-section group-chat-section">
   <h2>校内必备群聊</h2>
+  <p class="section-note">需要进群或咨询时，点对应按钮复制微信号，再说明要加入的群聊类型。</p>
   <div class="group-chat-grid">
     <div v-for="chat in groupChats" :key="chat.title" class="group-chat-card">
       <div class="group-chat-head">
@@ -75,7 +134,10 @@ async function copyWechat() {
 </div>
 
 <section class="guide-section">
-  <h2>先看这 9 件事</h2>
+  <div class="section-heading">
+    <h2>新生先确认这 9 件事</h2>
+    <p>先确认学校、校区、报到入口和生活服务，再去看具体页面。</p>
+  </div>
   <div class="fact-grid">
     <div class="fact-card"><h3>校名</h3><p><span class="source-badge">官方确认</span> 学校简介显示，2026 年更名为安徽科技工程大学。</p></div>
     <div class="fact-card"><h3>校区</h3><p><span class="source-badge">官方确认</span> 现有凤阳、龙湖、滁州三个校区。</p></div>
@@ -90,7 +152,10 @@ async function copyWechat() {
 </section>
 
 <section class="guide-section">
-  <h2>三校区速览</h2>
+  <div class="section-heading">
+    <h2>三校区速览</h2>
+    <p>先看自己在哪个校区，再看路线和生活信息。</p>
+  </div>
   <div class="campus-grid">
     <div class="info-card">
       <h3>凤阳校区</h3>
@@ -111,7 +176,10 @@ async function copyWechat() {
 </section>
 
 <section class="guide-section">
-  <h2>快捷入口</h2>
+  <div class="section-heading">
+    <h2>官方与常用入口</h2>
+    <p>涉及时间、缴费、学籍、资助等事项，以官方入口为准。</p>
+  </div>
   <div class="link-grid">
     <a class="quick-link" href="https://yx.ahstu.edu.cn/ahstuyx" target="_blank" rel="noreferrer">新生报到网</a>
     <a class="quick-link" href="https://www.ahstu.edu.cn/zsc/" target="_blank" rel="noreferrer">招生就业处</a>
@@ -122,7 +190,10 @@ async function copyWechat() {
 </section>
 
 <section class="guide-section">
-  <h2>新生最常问</h2>
+  <div class="section-heading">
+    <h2>新生最常问</h2>
+    <p>快速判断该去哪个页面继续查。</p>
+  </div>
   <div class="faq-grid">
     <div class="faq-card"><h3>什么时候报到？</h3><p>每年以录取通知书、迎新网和招生办公告为准。本攻略只整理入口与流程，不替代当年通知。</p></div>
     <div class="faq-card"><h3>到站后怎么去学校？</h3><p>报到当天通常会设置新生接待点；平时可按所在校区选择公交、高铁站、汽车站或自驾路线。</p></div>
