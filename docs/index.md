@@ -59,6 +59,7 @@ const guideCategories = [
       <a href="/arrival">新生入口</a>
       <a href="/campus-life#新生常问">常见问题</a>
       <a href="/campus-wall">新生群组</a>
+      <a href="/about">认识安科</a>
     </div>
   </div>
   <figure class="hero-media">
