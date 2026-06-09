@@ -177,20 +177,6 @@ async function copyWechat() {
 
 <section class="guide-section">
   <div class="section-heading">
-    <h2>官方与常用入口</h2>
-    <p>涉及时间、缴费、学籍、资助等事项，以官方入口为准。</p>
-  </div>
-  <div class="link-grid">
-    <a class="quick-link" href="https://yx.ahstu.edu.cn/ahstuyx" target="_blank" rel="noreferrer">新生报到网</a>
-    <a class="quick-link" href="https://www.ahstu.edu.cn/zsc/" target="_blank" rel="noreferrer">招生就业处</a>
-    <a class="quick-link" href="/freshman-pack">2026 新生资料包</a>
-    <a class="quick-link" href="https://www.ahstu.edu.cn/cyfw.htm" target="_blank" rel="noreferrer">常用服务</a>
-    <a class="quick-link" href="https://www.ahstu.edu.cn/jwc/jxrl.htm" target="_blank" rel="noreferrer">校历查询</a>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="section-heading">
     <h2>新生最常问</h2>
     <p>快速判断该去哪个页面继续查。</p>
   </div>
