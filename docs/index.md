@@ -3,53 +3,6 @@ layout: home
 title: 安科 26 新生攻略
 ---
 
-<script setup>
-const guideCategories = [
-  {
-    title: '新生入口',
-    desc: '报到清单、线上入口、到校流程和交通路线。',
-    href: '/arrival',
-    icon: '▣',
-    tone: 'red'
-  },
-  {
-    title: '常见问题',
-    desc: '宿舍、洗澡、食堂、网络、门禁等高频问题。',
-    href: '/campus-life#新生常问',
-    icon: '?',
-    tone: 'blue'
-  },
-  {
-    title: '物品准备',
-    desc: '开学要带什么、什么到校再买、快递怎么寄。',
-    href: '/arrival#报到前清单',
-    icon: '□',
-    tone: 'green'
-  },
-  {
-    title: '新生群组',
-    desc: '新生群、论坛、二手群和跑腿代拿入口。',
-    href: '/campus-wall',
-    icon: '●',
-    tone: 'purple'
-  },
-  {
-    title: '信息索引',
-    desc: '官网、招生、迎新、校历、地图和常用服务。',
-    href: '/tools',
-    icon: '⌁',
-    tone: 'amber'
-  },
-  {
-    title: '认识安科',
-    desc: '学校沿革、三校区、学院专业和办学特色。',
-    href: '/about',
-    icon: '1950',
-    tone: 'slate'
-  }
-]
-</script>
-
 <section class="guide-hero">
   <div class="hero-copy">
     <span class="hero-kicker">2026 新生入学导航</span>
@@ -66,22 +19,6 @@ const guideCategories = [
     <img src="/images/high-quality-development.jpg" alt="安徽科技工程大学高质量发展大会现场">
     <figcaption>安徽科技工程大学高质量发展大会现场图，展示学校更名后的新形象。</figcaption>
   </figure>
-</section>
-
-<section class="guide-section entry-section">
-  <div class="section-heading">
-    <h2>先按这 6 类找</h2>
-    <p>不确定从哪里看时，直接点对应卡片。</p>
-  </div>
-  <div class="entry-grid">
-    <a v-for="category in guideCategories" :key="category.title" class="entry-card" :class="`entry-card-${category.tone}`" :href="category.href">
-      <span class="entry-icon" aria-hidden="true">{{ category.icon }}</span>
-      <span class="entry-copy">
-        <strong>{{ category.title }}</strong>
-        <span>{{ category.desc }}</span>
-      </span>
-    </a>
-  </div>
 </section>
 
 <section class="guide-section">
