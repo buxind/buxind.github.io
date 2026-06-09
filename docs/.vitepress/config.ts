@@ -16,6 +16,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '新生知道', link: '/arrival' },
+      { text: '常见问题', link: '/campus-life#新生常问' },
       { text: '信息索引', link: '/tools' },
       { text: '掌上安科', link: '/freshman-pack' },
       { text: '校园墙', link: '/campus-wall' }

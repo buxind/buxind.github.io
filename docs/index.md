@@ -27,7 +27,7 @@ const guideCategories = [
     tone: 'green'
   },
   {
-    title: '校友群组',
+    title: '新生群组',
     desc: '新生群、论坛、二手群和跑腿代拿入口。',
     href: '/campus-wall',
     icon: '●',
@@ -51,12 +51,14 @@ const guideCategories = [
 </script>
 
 <section class="guide-hero">
-  <div>
+  <div class="hero-copy">
+    <span class="hero-kicker">2026 新生入学导航</span>
     <h1>安科 26 新生攻略</h1>
     <p>给准备报考、已经录取和即将报到的同学：先看入口，再查问题，最后按校区确认路线、宿舍、食堂和常用服务。重要时间和政策请以学校当年官方通知为准。</p>
     <div class="hero-actions">
       <a href="/arrival">新生入口</a>
       <a href="/campus-life#新生常问">常见问题</a>
+      <a href="/campus-wall">新生群组</a>
     </div>
   </div>
   <figure class="hero-media">
